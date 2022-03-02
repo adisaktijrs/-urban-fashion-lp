@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Martel', serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/background.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 160px;
+    cursor: pointer;
+}
+
+.cart {
+    display: none;
+    width: 40px;
+    cursor: pointer;
+}
+
+nav {
+    flex: 1;
+    padding-left: 60px;
+}
+
+nav ul li {
+    display: none;
+    list-style: none;
+    margin: 0px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul li a:hover {
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    color: #232d60;
+    font-weight: bold;
+}
+
+
+/* Burger menu by Izzy Skye */
+/* https://codepen.io/chrysokitty/pen/yNwqPX */
+.burger,
+.burger:before,
+.burger:after,
+.burger span,
+.burger span:before,
+.burger span:after {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.burger-check {
+    display: none;
+}
+
+.burger {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.burger span,
+.burger span:before,
+.burger span:after {
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    width: 40px;
+    height: 4px;
+    background: #333;
+    border-radius: 0.2em;
+}
+
+.burger span:before,
+.burger span:after {
+    content: '';
+    left: 0;
+}
+
+.burger span:before {
+    top: -8px;
+}
+
+.burger span:after {
+    top: 8px;
+}
+
+.burger-check:checked+.burger:after {
+    content: '';
+}
+
+.burger-check:checked+.burger span {
+    height: 0;
+    width: 0;
+}
+
+.burger-check:checked+.burger span:before,
+.burger-check:checked+.burger span:after {
+    top: 6px;
+}
+
+.burger-check:checked+.burger span:before {
+    -webkit-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+.burger-check:checked+.burger span:after {
+    -webkit-transform: rotate(-225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(-225deg);
+}
+/* End of burger menu by Izzy Skye */
+
+.backdrop {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 85vh;
+    bottom: 0;
+    left: 0;
+    background: #bce8fe;
+    z-index: 10;
+    border-radius: 50px 50px 0 0;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    z-index: 11;
+    width: 100vw;
+    height: 85vh;
+    bottom: 0;
+    left: 0;
+}
+
+.mobile-nav__items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav__items li {
+    margin: 1rem;
+    list-style: none;
+}
+
+.mobile-nav__items li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.mobile-nav__items li a:hover {
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    color: #fff;
+}
+
+.mobile-nav-cart {
+    width: 3rem;
+}
+
+.content h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 200;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+    color: #232d60;
+}
+
+.content p {
+    margin-top: 2rem;
+    font-size: 20px;
+    color: #6a7199;
+    max-width: 100%;
+}
+
+.content {
+    margin-top: 10%;
+}
+
+.content .btn {
+    margin-top: 3rem;
+    display: inline-block;
+    background: linear-gradient(45deg, #87adfe, #ff77cd);
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 3px 8px 22px rgba(94, 28, 68, 0.15);
+    transition: .5s;
+}
+
+.content .btn:hover {
+    box-shadow: 3px 8px 22px rgba(94, 28, 68, 0.35);
+}
+
+.arrow-icons {
+    margin-top: 40px;
+    display: flex;
+}
+
+.arrow-icons img {
+    width: 40px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.feature-img {
+    display: none;
+}
+
+.social-links {
+    position: absolute;
+    bottom: 2rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #6a7199;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.social-links a:hover {
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in-out;
+    color: #232d60;
+}
+
+.open {
+    display: block !important;
+}
+
+@media (min-width: 430px) {
+    .social-links {
+        transform: rotate(-90deg);
+        position: absolute;
+        left: -90px;
+        bottom: 170px;
+    }
+
+    .content {
+        margin-left: 10%;
+    }
+}
+
+@media (min-width: 768px) {
+    .feature-img {
+        display: block;
+        position: absolute;
+        height: 50%;
+        bottom: 0;
+        right: 30px;
+    }
+
+    .content p {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    nav {
+        flex: 1;
+        padding-left: 60px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 0px 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .cart {
+        display: block;
+    }
+
+    .content h1 {
+        font-size: 60px;
+        line-height: normal;
+        margin-top: 24px;
+        margin-top: 2rem;
+        margin-bottom: 15px;
+        max-width: 60%;
+    }
+
+    .content p {
+        margin-top: 1rem;
+    }
+
+    .content .btn {
+        margin-top: 2rem;
+    }
+
+    .feature-img {
+        height: 80%;
+        bottom: 0;
+        right: 50px;
+    }
+
+    .social-links {
+        left: -70px;
+        bottom: 180px;
+    }
+}
+
+@media (min-width: 1180px) {
+    .feature-img {
+        height: 90%;
+        bottom: 0;
+        right: 60px;
+    }
+
+    .content h1 {
+        max-width: 55%;
+    }
+}
